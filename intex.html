@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Disculpas a Sara</title>
+<style>
+  body {
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    background-color: #FFC0CB;
+    margin: 0;
+    padding: 0;
+  }
+  #perdonar {
+    font-size: 24px;
+    margin-top: 50px;
+    color: #FF1493;
+  }
+  #opciones {
+    margin-top: 20px;
+  }
+  button {
+    font-size: 18px;
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    cursor: pointer;
+    background-color: #FF69B4;
+    color: #FFFFFF;
+    border-radius: 5px;
+    transition: transform 0.3s;
+  }
+  button:hover {
+    transform: scale(1.1);
+  }
+  #si {
+    font-size: 18px;
+    transition: font-size 0.5s;
+  }
+  #mensaje-final {
+    display: none;
+    margin-top: 50px;
+    color: #FF1493;
+  }
+</style>
+</head>
+<body>
+  <div id="perdonar">Sara, ¿me perdonas?</div>
+  <div id="opciones">
+    <button onclick="responder('si')">Sí</button>
+    <button onclick="responder('no')">No</button>
+  </div>
+
+<div id="mensaje-final">
+  <p>¡Te amo Sara, no sé programar!</p>
+  <img src="https://i.pinimg.com/originals/78/19/96/7819961c24ecf268cb7ce0910cbdb0c8.gif" alt="Pompurin de Hello Kitty" style="width: 80vw; max-width: 300px;">
+</div>
+
+<script>
+  let size = 18;
+
+  function responder(respuesta) {
+    if (respuesta === 'no') {
+      size += 2;
+      document.getElementById('si').style.fontSize = size + 'px';
+      if (size >= 36) {
+        document.getElementById('opciones').style.display = "none";
+        document.getElementById('mensaje-final').style.display = "block";
+      }
+    } else {
+      alert('¡Gracias, Sara!');
+    }
+  }
+</script>
+</body>
+</html>
